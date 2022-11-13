@@ -88,6 +88,10 @@ error_output_not_exist = """
 Output path not found
 """
 
+error_missing = """
+Missing input or output
+"""
+
 version_string = """
 Version: %s
 """
@@ -210,5 +214,9 @@ for i in range(0,len(argv)):
                 print(error_output_value)
                 exit()
 
-sound = AudioSegment.from_file(os.path.expanduser(input))
-sound.export(os.path.expanduser(output), format="ogg", bitrate=str(bitrate_value)+"k")
+
+if is_input and is_output:
+    sound = AudioSegment.from_file(os.path.expanduser(input))
+    sound.export(os.path.expanduser(output), format="ogg", bitrate=str(bitrate_value)+"k")
+else:
+    print(error_missing)
