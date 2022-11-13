@@ -13,9 +13,14 @@
 
 Default bitrate is 128k
 
-## Requirements for Ubuntu 22.04
+## Installation for Ubuntu 22.04
 ```sh
 sudo apt-get install -y python3-pydub
+cd /tmp
+git clone https://github.com/Mateusz-Dera/pym3oc.git
+sudo cp /tmp/pym3oc/pym3oc /bin
+sudo chmod +x /bin/pym3oc
+pym3oc -v
 ```
 
 ## Example of use
