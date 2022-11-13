@@ -1,3 +1,5 @@
+#!/bin/python3
+
 # pym3oc
 # Copyright © 2022 Mateusz Dera
 
