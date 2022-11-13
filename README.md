@@ -13,13 +13,13 @@
 
 Default bitrate is 128k
 
-## Installation
+## Ubuntu 22.04
 ```sh
 sudo apt-get install -y python3-pydub
 ```
 
 ## Example of use
 ```sh
-pym3oc -i ~/file.mp3 -o ~/file.ogg -b 128
-pym3oc --input ~/file.mp3 -output ~/file.ogg
+pym3oc.py -i ~/file.mp3 -o ~/file.ogg -b 128
+pym3oc.py --input ~/file.mp3 -output ~/file.ogg
 ```
