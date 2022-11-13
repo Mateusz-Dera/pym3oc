@@ -25,7 +25,7 @@ import os
 from sys import argv
 from pydub import AudioSegment
 
-version = "2022.11.13.2"
+version = "2022.11.14.1"
 
 help_string = """
 Short   Long        Description
@@ -90,6 +90,10 @@ Output path not found
 
 error_missing = """
 Missing input or output
+"""
+
+error_wrong = """
+Wrong argument "%s"
 """
 
 version_string = """
@@ -173,7 +177,9 @@ def output(o):
         exit()   
     pass
 
-for i in range(0,len(argv)):
+next = 0
+
+for i in range(1,len(argv)):
 
     if argv[i] == "-h" or argv[i] == "--help":
         help()
@@ -184,8 +190,8 @@ for i in range(0,len(argv)):
             exit()
         else:
             if i+1 <= len(argv):
-                i+=1
-                input(argv[i])
+                next = i+1
+                input(argv[next])
             else:
                 print(error_input_value)
                 exit()
@@ -196,8 +202,8 @@ for i in range(0,len(argv)):
             exit()
         else:
             if i+1 <= len(argv):
-                i+=1
-                bitrate(argv[i])
+                next = i+1
+                bitrate(argv[next])
             else:
                 print(error_bitrate_value)
                 exit()
@@ -208,11 +214,15 @@ for i in range(0,len(argv)):
             exit()
         else:
             if i+1 <= len(argv):
-                i+=1
-                output(argv[i])
+                next = i+1
+                output(argv[next])
             else:
                 print(error_output_value)
                 exit()
+    else:
+        if i != next:
+            print(error_wrong% str(argv[i]))
+            exit()
 
 
 if is_input and is_output:
