@@ -20,6 +20,6 @@ sudo apt-get install -y python3-pydub
 
 ## Example of use
 ```sh
-pym3oc.py -i ~/file.mp3 -o ~/file.ogg -b 128
-pym3oc.py --input ~/file.mp3 -output ~/file.ogg
+python3 pym3oc.py -i ~/file.mp3 -o ~/file.ogg -b 128
+python3 pym3oc.py --input ~/file.mp3 -output ~/file.ogg
 ```
