@@ -25,7 +25,7 @@ import os
 from sys import argv
 from pydub import AudioSegment
 
-version = "2022.11.13"
+version = "2022.11.13.2"
 
 help_string = """
 Short   Long        Description
@@ -72,7 +72,7 @@ error_bitrate_duplicate = """
 Duplicated bitrate value
 """
 
-error_input_value = """
+error_output_value = """
 Missing output value
 """
 
@@ -209,7 +209,6 @@ for i in range(0,len(argv)):
             else:
                 print(error_output_value)
                 exit()
-
 
 sound = AudioSegment.from_file(os.path.expanduser(input))
 sound.export(os.path.expanduser(output), format="ogg", bitrate=str(bitrate_value)+"k")
