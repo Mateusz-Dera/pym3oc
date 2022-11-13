@@ -5,6 +5,7 @@
 ## Usage:
 |Short|Long|Description|
 |---|---|---|
+|-v|--version|Show version|
 |-h|--help|Show help|
 |-b|--bitrate|Bitrate|
 |-i|--input|Input file|
