@@ -13,7 +13,7 @@
 
 Default bitrate is 128k
 
-## Ubuntu 22.04
+## Requirements for Ubuntu 22.04
 ```sh
 sudo apt-get install -y python3-pydub
 ```
